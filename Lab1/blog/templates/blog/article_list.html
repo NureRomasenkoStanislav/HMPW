@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мій Блог</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
+        .article-item { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .search-form { margin-bottom: 30px; background: #f4f4f4; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Мій Блог</h1>
+
+    <div class="search-form">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q" placeholder="Пошук статей..." required>
+            <button type="submit">Знайти</button>
+        </form>
+    </div>
+
+    <hr>
+
+    {% for article in articles %}
+        <div class="article-item">
+            <h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2>
+            <p>
+                <strong>Категорія:</strong> {{ article.category.name }} | 
+                <small>Дата: {{ article.pub_date|date:"d.m.Y" }}</small>
+            </p>
+        </div>
+    {% empty %}
+        <p>Статей поки немає. Додайте їх через адмінку.</p>
+    {% endfor %}
+
+</body>
+</html>
