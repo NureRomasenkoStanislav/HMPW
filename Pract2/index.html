@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>Список покупок</title>
+</head>
+<body>
+    <h1>Мій список покупок</h1>
+    <ul id="shopping-list"></ul>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('shopping-list');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Помилка:', error));
+    </script>
+</body>
+</html>

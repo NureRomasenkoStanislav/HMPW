@@ -1,9 +1,14 @@
 # Завдання 1: Знайти найменше з трьох чисел
-def find_min(a, b, c):
-    result = min(a, b, c)
-    print(f"Найменше число серед {a}, {b}, {c} — це {result}")
+def find_min(arr):
+    min = arr[0]
+    for x in arr:
+        if x< min:
+            min = x
 
-find_min(10, 5, 8)
+    return min
+
+find_min([10, 5 , 7])
+print(find_min([10, 5 , 7]))
 
 # Завдання 2: Обертання рядка
 def reverse_string(text):

@@ -17,13 +17,16 @@ def article_detail(request, pk):
     })
 # Пошук (Рівень 4)
 def search_articles(request):
-    query = request.GET.get('q')
+    query = request.GET.get('q')  
     results = []
     if query:
         results = Article.objects.filter(
             Q(title__icontains=query) | Q(text__icontains=query)
         )
-    return render(request, 'blog/search_results.html', {'results': results, 'query': query})
+    return render(request, 'blog/search_results.html', {
+        'results': results, 
+        'query': query
+    })
 
 # Видалення коментаря (Рівень 3)
 def delete_comment(request, comment_id):
