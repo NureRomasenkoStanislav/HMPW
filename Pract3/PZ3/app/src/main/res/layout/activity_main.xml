@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Лабораторні роботи (Варіант 12)"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnLevel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рівень 1, Завдання 2 (Кнопка вітання)"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnLevel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рівень 2, Завдання 2 (ToDo Список)"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnLevel3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рівень 3, Завдання 2 (Retrofit + Coroutines)"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnLevel4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рівень 4, Завдання 2 (Зберігання рецептів)"/>
+
+</LinearLayout>
